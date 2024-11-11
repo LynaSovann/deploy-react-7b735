@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: deploy-react-7b735-certificate
+  namespace: deploy-react-7b735
+spec:
+  secretName: deploy-react-7b735-secret-tls
+  commonName: dara-kok5367-deploy-react.assessify.org
+  dnsNames:
+  - dara-kok5367-deploy-react.assessify.org
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
