@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-react-7b735-deployment
+  labels:
+    app: deploy-react-7b735
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deploy-react-7b735
+  template:
+    metadata:
+      labels:
+        app: deploy-react-7b735
+    spec:
+      containers:
+        - name: deploy-react-7b735-container
+          image: pipejet/deploy-react-7b735:latest
+          ports:
+            - containerPort: 3000
